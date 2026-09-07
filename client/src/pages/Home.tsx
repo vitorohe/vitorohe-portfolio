@@ -9,7 +9,9 @@ import {
   Instagram,
   Linkedin,
   MapPin,
+  Maximize2,
   Play,
+  X,
   Sparkles,
   Youtube,
 } from "lucide-react";
@@ -55,6 +57,8 @@ const portfolioContent = {
     creativeTitle: "Looking closely is\na way of thinking.",
     creativeText: "Macro photography keeps me patient. It makes the ordinary feel worth studying: a leaf, a pattern, a moment that only appears when you slow down.",
     creativeCta: "Visit @macro_everyday",
+    galleryLabel: "Selected frames",
+    galleryOpen: "Open photo",
     linksLabel: "Elsewhere",
     linkLabels: ["LinkedIn", "GitHub", "Instagram", "YouTube"],
     footer: "Built with intention in Santiago.",
@@ -85,6 +89,8 @@ const portfolioContent = {
     creativeTitle: "Mirar de cerca también\nes una forma de pensar.",
     creativeText: "La macrofotografía me mantiene paciente. Hace que lo cotidiano merezca atención: una hoja, un patrón, un instante que solo aparece cuando bajas el ritmo.",
     creativeCta: "Visitar @macro_everyday",
+    galleryLabel: "Fotografías seleccionadas",
+    galleryOpen: "Abrir foto",
     linksLabel: "En otros lugares",
     linkLabels: ["LinkedIn", "GitHub", "Instagram", "YouTube"],
     footer: "Hecho con intención en Santiago.",
@@ -113,6 +119,8 @@ const portfolioContent = {
     creativeTitle: "Olhar de perto também\né uma forma de pensar.",
     creativeText: "A macrofotografia me ensina a ter paciência. Ela faz o cotidiano merecer atenção: uma folha, um padrão, um instante que só aparece quando diminuímos o ritmo.",
     creativeCta: "Visitar @macro_everyday",
+    galleryLabel: "Fotografias selecionadas",
+    galleryOpen: "Abrir foto",
     linksLabel: "Em outros lugares",
     linkLabels: ["LinkedIn", "GitHub", "Instagram", "YouTube"],
     footer: "Feito com intenção em Santiago.",
@@ -127,12 +135,21 @@ const socials = [
   { label: "YouTube", href: "https://www.youtube.com/", icon: Youtube },
 ];
 
+// EDIT HERE: add or reorder gallery entries. Images are stored in WebDev storage.
+const galleryPhotos = [
+  { src: "/manus-storage/flower-drops_66a8cd4a.jpg", title: "After rain", note: "petals / morning" },
+  { src: "/manus-storage/dandelion_399d909d.jpg", title: "A small universe", note: "seed head / light" },
+  { src: "/manus-storage/pink-petal_6291fd19.jpg", title: "Soft geometry", note: "petal / blush" },
+  { src: "/manus-storage/leaf-veins_d37534c0.jpg", title: "Green architecture", note: "leaf / structure" },
+];
+
 function ExternalLink({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) {
   return <a className={className} href={href} target="_blank" rel="noreferrer">{children}</a>;
 }
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("en");
+  const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
   const t = portfolioContent[language];
 
   return (
@@ -202,7 +219,11 @@ export default function Home() {
 
         <section id="field-notes" className="creative-section">
           <div className="container creative-grid">
-            <div className="creative-visual"><div className="visual-ring" /><div className="visual-label"><Camera size={17} /><span>macro / everyday</span></div><div className="visual-shape shape-one" /><div className="visual-shape shape-two" /><div className="visual-caption">A different kind<br />of focus.</div></div>
+            <div className="gallery-column">
+              <div className="gallery-heading"><p className="eyebrow"><Camera size={15} />{t.galleryLabel}</p><span>04 / 04</span></div>
+              <div className="gallery-grid">{galleryPhotos.map((photo, index) => <button className={`gallery-tile tile-${index + 1}`} key={photo.src} onClick={() => setSelectedPhoto(index)} aria-label={`${t.galleryOpen}: ${photo.title}`}><img src={photo.src} alt={photo.title} /><span className="gallery-tile-caption"><strong>{photo.title}</strong><small>{photo.note}</small></span><span className="gallery-open"><Maximize2 size={15} /></span></button>)}</div>
+              <ExternalLink className="gallery-instagram" href="https://www.instagram.com/macro_everyday/"><Instagram size={15} />See the full collection <ArrowUpRight size={15} /></ExternalLink>
+            </div>
             <div className="creative-copy"><p className="eyebrow">{t.creativeLabel}</p><h2>{t.creativeTitle.split("\n").map((line) => <span key={line}>{line}</span>)}</h2><p className="body-large">{t.creativeText}</p><ExternalLink className="text-link" href="https://www.instagram.com/macro_everyday/">{t.creativeCta}<ArrowUpRight size={17} /></ExternalLink></div>
           </div>
         </section>
@@ -211,6 +232,7 @@ export default function Home() {
       </main>
 
       <footer className="footer container"><span>© {new Date().getFullYear()} Víctor Rojas</span><span>{t.footer}</span><a href="#top">Back to top ↑</a></footer>
+      {selectedPhoto !== null && <div className="lightbox" role="dialog" aria-modal="true" aria-label={galleryPhotos[selectedPhoto].title} onClick={() => setSelectedPhoto(null)}><div className="lightbox-inner" onClick={(event) => event.stopPropagation()}><button className="lightbox-close" onClick={() => setSelectedPhoto(null)} aria-label="Close photo"><X size={20} /></button><img src={galleryPhotos[selectedPhoto].src} alt={galleryPhotos[selectedPhoto].title} /><div className="lightbox-meta"><div><strong>{galleryPhotos[selectedPhoto].title}</strong><span>{galleryPhotos[selectedPhoto].note}</span></div><span>{String(selectedPhoto + 1).padStart(2, "0")} / {String(galleryPhotos.length).padStart(2, "0")}</span></div></div></div>}
     </div>
   );
 }
