@@ -138,8 +138,8 @@ const socials = [
 // EDIT HERE: add or reorder gallery entries. Images are stored in WebDev storage.
 const galleryPhotos = [
   { src: "/manus-storage/macro-6_e98e7369.jpeg", title: "Leaf after rain", note: "leaf / water drops" },
+  { src: "/manus-storage/macro-5_d0967b02.jpeg", title: "Colour in bloom", note: "flower / centre" },
   { src: "/manus-storage/flower-drops_66a8cd4a.jpg", title: "After rain", note: "petals / morning" },
-  { src: "/manus-storage/dandelion_399d909d.jpg", title: "A small universe", note: "seed head / light" },
   { src: "/manus-storage/pink-petal_6291fd19.jpg", title: "Soft geometry", note: "petal / blush" },
   { src: "/manus-storage/leaf-veins_d37534c0.jpg", title: "Green architecture", note: "leaf / structure" },
 ];
