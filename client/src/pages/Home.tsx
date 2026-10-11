@@ -139,7 +139,7 @@ const socials = [
 const galleryPhotos = [
   { src: "/manus-storage/macro-6_e98e7369.jpeg", title: "Leaf after rain", note: "leaf / water drops" },
   { src: "/manus-storage/macro-5_d0967b02.jpeg", title: "Colour in bloom", note: "flower / centre" },
-  { src: "/manus-storage/flower-drops_66a8cd4a.jpg", title: "After rain", note: "petals / morning" },
+  { src: "/manus-storage/macro-1_fa17c9b7.jpeg", title: "Quiet beginnings", note: "buds / backlight" },
   { src: "/manus-storage/macri-4_f7e9c201.webp", title: "Iridescent visitor", note: "fly / leaf" },
   { src: "/manus-storage/leaf-veins_d37534c0.jpg", title: "Green architecture", note: "leaf / structure" },
 ];
