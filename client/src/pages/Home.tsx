@@ -13,7 +13,6 @@ import {
   Play,
   X,
   Sparkles,
-  Youtube,
 } from "lucide-react";
 
 type Language = "en" | "es" | "pt";
@@ -60,7 +59,7 @@ const portfolioContent = {
     galleryLabel: "Selected frames",
     galleryOpen: "Open photo",
     linksLabel: "Elsewhere",
-    linkLabels: ["LinkedIn", "GitHub", "Instagram", "YouTube"],
+    linkLabels: ["LinkedIn", "GitHub", "Instagram"],
     footer: "Built with intention in Santiago.",
     availability: "Open to thoughtful conversations",
   },
@@ -92,7 +91,7 @@ const portfolioContent = {
     galleryLabel: "Fotografías seleccionadas",
     galleryOpen: "Abrir foto",
     linksLabel: "En otros lugares",
-    linkLabels: ["LinkedIn", "GitHub", "Instagram", "YouTube"],
+    linkLabels: ["LinkedIn", "GitHub", "Instagram"],
     footer: "Hecho con intención en Santiago.",
     availability: "Disponible para conversaciones con sentido",
   },
@@ -122,7 +121,7 @@ const portfolioContent = {
     galleryLabel: "Fotografias selecionadas",
     galleryOpen: "Abrir foto",
     linksLabel: "Em outros lugares",
-    linkLabels: ["LinkedIn", "GitHub", "Instagram", "YouTube"],
+    linkLabels: ["LinkedIn", "GitHub", "Instagram"],
     footer: "Feito com intenção em Santiago.",
     availability: "Aberto a conversas com propósito",
   },
@@ -132,7 +131,6 @@ const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/víctor-rojas-2887b252/", icon: Linkedin },
   { label: "GitHub", href: "https://github.com/vitorohe/", icon: Github },
   { label: "Instagram", href: "https://www.instagram.com/macro_everyday/", icon: Instagram },
-  { label: "YouTube", href: "https://www.youtube.com/", icon: Youtube },
 ];
 
 // EDIT HERE: add or reorder gallery entries. Images are stored in WebDev storage.
