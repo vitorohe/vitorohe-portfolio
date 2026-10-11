@@ -137,11 +137,11 @@ const socials = [
 
 // EDIT HERE: add or reorder gallery entries. Images are stored in WebDev storage.
 const galleryPhotos = [
-  { src: "/manus-storage/macro-6_e98e7369.jpeg", title: "Leaf after rain", note: "leaf / water drops" },
-  { src: "/manus-storage/macro-5_d0967b02.jpeg", title: "Colour in bloom", note: "flower / centre" },
-  { src: "/manus-storage/macro-1_fa17c9b7.jpeg", title: "Quiet beginnings", note: "buds / backlight" },
-  { src: "/manus-storage/macri-4_f7e9c201.webp", title: "Iridescent visitor", note: "fly / leaf" },
-  { src: "/manus-storage/leaf-veins_d37534c0.jpg", title: "Green architecture", note: "leaf / structure" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663591457235/nXELHHmnzTeOgwFL.jpeg", title: "Leaf after rain", note: "leaf / water drops" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663591457235/MySxKRfCDsfqkdSb.jpeg", title: "Colour in bloom", note: "flower / centre" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663591457235/DzYYMTkQaGKFMKQE.jpeg", title: "Quiet beginnings", note: "buds / backlight" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663591457235/xwhKxWsMNIZzUHDR.webp", title: "Iridescent visitor", note: "fly / leaf" },
+  { src: "https://files.manuscdn.com/search-media/310519663591457235/93F9kVDUKjL0eD5Ds2ZMvs/kHomUP6iHjP4gC7UFyCiAG.jpg", title: "Green architecture", note: "leaf / structure" },
 ];
 
 function ExternalLink({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) {
