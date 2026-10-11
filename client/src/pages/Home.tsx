@@ -50,8 +50,8 @@ const portfolioContent = {
     projectsTitle: "Small tools, sharp edges,\npractical outcomes.",
     projectsText: "A few public projects from the workshop. Each one is an invitation to inspect, reuse, or improve.",
     projects: [
-      { name: "scrappin", type: "Web scraping boilerplate", description: "A practical starting point for scraping a webpage with Selenium and Firefox.", href: "https://github.com/admetricks/scrappin", tag: "Dockerfile" },
       { name: "xpath-extension", type: "Browser extension", description: "A focused JavaScript tool for working with XPath in the browser.", href: "https://github.com/vitorohe/xpath-extension", tag: "JavaScript" },
+      { name: "aware", type: "Nomad allocation helper", description: "A Python tool that estimates desired allocations for Nomad jobs from SQS consumption.", href: "https://github.com/vitorohe/aware", tag: "Python" },
     ],
     creativeLabel: "Away from the screen",
     creativeTitle: "Looking closely is\na way of thinking.",
@@ -84,7 +84,7 @@ const portfolioContent = {
     projectsLabel: "Trabajo abierto",
     projectsTitle: "Herramientas pequeñas,\nresultados concretos.",
     projectsText: "Algunos proyectos públicos del taller. Cada uno es una invitación a mirar, reutilizar o mejorar.",
-    projects: [{ name: "scrappin", type: "Base para web scraping", description: "Un punto de partida práctico para extraer datos con Selenium y Firefox.", href: "https://github.com/admetricks/scrappin", tag: "Dockerfile" }, { name: "xpath-extension", type: "Extensión de navegador", description: "Una herramienta JavaScript enfocada en trabajar con XPath dentro del navegador.", href: "https://github.com/vitorohe/xpath-extension", tag: "JavaScript" }],
+    projects: [{ name: "xpath-extension", type: "Extensión de navegador", description: "Una herramienta JavaScript enfocada en trabajar con XPath dentro del navegador.", href: "https://github.com/vitorohe/xpath-extension", tag: "JavaScript" }, { name: "aware", type: "Ayudante de asignaciones Nomad", description: "Una herramienta Python que estima asignaciones deseadas para trabajos Nomad usando consumo de SQS.", href: "https://github.com/vitorohe/aware", tag: "Python" }],
     creativeLabel: "Lejos de la pantalla",
     creativeTitle: "Mirar de cerca también\nes una forma de pensar.",
     creativeText: "La macrofotografía me mantiene paciente. Hace que lo cotidiano merezca atención: una hoja, un patrón, un instante que solo aparece cuando bajas el ritmo.",
@@ -114,7 +114,7 @@ const portfolioContent = {
     projectsLabel: "Trabalho aberto",
     projectsTitle: "Ferramentas pequenas,\nresultados práticos.",
     projectsText: "Alguns projetos públicos da oficina. Cada um é um convite para explorar, reutilizar ou melhorar.",
-    projects: [{ name: "scrappin", type: "Base para web scraping", description: "Um ponto de partida prático para scraping com Selenium e Firefox.", href: "https://github.com/admetricks/scrappin", tag: "Dockerfile" }, { name: "xpath-extension", type: "Extensão de navegador", description: "Uma ferramenta JavaScript focada em trabalhar com XPath no navegador.", href: "https://github.com/vitorohe/xpath-extension", tag: "JavaScript" }],
+    projects: [{ name: "xpath-extension", type: "Extensão de navegador", description: "Uma ferramenta JavaScript focada em trabalhar com XPath no navegador.", href: "https://github.com/vitorohe/xpath-extension", tag: "JavaScript" }, { name: "aware", type: "Auxiliar de alocação Nomad", description: "Uma ferramenta Python que estima alocações desejadas para jobs Nomad a partir do consumo do SQS.", href: "https://github.com/vitorohe/aware", tag: "Python" }],
     creativeLabel: "Longe da tela",
     creativeTitle: "Olhar de perto também\né uma forma de pensar.",
     creativeText: "A macrofotografia me ensina a ter paciência. Ela faz o cotidiano merecer atenção: uma folha, um padrão, um instante que só aparece quando diminuímos o ritmo.",
@@ -137,6 +137,7 @@ const socials = [
 
 // EDIT HERE: add or reorder gallery entries. Images are stored in WebDev storage.
 const galleryPhotos = [
+  { src: "/manus-storage/macro-6_e98e7369.jpeg", title: "Leaf after rain", note: "leaf / water drops" },
   { src: "/manus-storage/flower-drops_66a8cd4a.jpg", title: "After rain", note: "petals / morning" },
   { src: "/manus-storage/dandelion_399d909d.jpg", title: "A small universe", note: "seed head / light" },
   { src: "/manus-storage/pink-petal_6291fd19.jpg", title: "Soft geometry", note: "petal / blush" },
@@ -220,7 +221,7 @@ export default function Home() {
         <section id="field-notes" className="creative-section">
           <div className="container creative-grid">
             <div className="gallery-column">
-              <div className="gallery-heading"><p className="eyebrow"><Camera size={15} />{t.galleryLabel}</p><span>04 / 04</span></div>
+              <div className="gallery-heading"><p className="eyebrow"><Camera size={15} />{t.galleryLabel}</p><span>05 / 05</span></div>
               <div className="gallery-grid">{galleryPhotos.map((photo, index) => <button className={`gallery-tile tile-${index + 1}`} key={photo.src} onClick={() => setSelectedPhoto(index)} aria-label={`${t.galleryOpen}: ${photo.title}`}><img src={photo.src} alt={photo.title} /><span className="gallery-tile-caption"><strong>{photo.title}</strong><small>{photo.note}</small></span><span className="gallery-open"><Maximize2 size={15} /></span></button>)}</div>
               <ExternalLink className="gallery-instagram" href="https://www.instagram.com/macro_everyday/"><Instagram size={15} />See the full collection <ArrowUpRight size={15} /></ExternalLink>
             </div>
